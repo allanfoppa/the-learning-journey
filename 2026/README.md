@@ -2,6 +2,28 @@
 
 ### First Third: January, February, March, April
 
+>[!NOTE]
+>This topic will be recurring in the study plan due to the great importance of the subject.
+
+**Focus:** Refactoring and Design Principles
+
+**Key Topics/Languages:**  
+	Refactoring techniques (e.g., Martin Fowler's refactorings)  
+	Design patterns (e.g., Gang of Four)  
+	SOLID principles  
+
+**Some Goals:**  
+	Apply refactoring techniques to improve existing codebases.  
+	Learn and implement common design patterns.  
+	Understand and apply SOLID principles for maintainable and scalable code.  
+	Understand and apply CLEAN CODE principles for maintainable and scalable code.  
+
+**Result:**  
+
+[Refactoring and Design Principles](https://github.com/allanfoppa/refactoring-and-design-principles)
+
+### Second Third: May, June, July, August
+
 **Focus:** Distributed Systems Architecture and Database Design
 
 **Key Topics/Languages:**  
