@@ -1,0 +1,44 @@
+title: Continuous Learning Journey
+description: My 2026 learning path covering OOP, Architecture, Design Patterns, and Backend Development
+baseurl: "/continuous-learning"
+url: "https://github.com/allanfoppa"
+
+theme: minima
+
+minima:
+  skin: dark
+
+github_username: allanfoppa
+linkedin_username: allanfoppa
+
+# navigation menu order
+header_pages:
+  - index.md
+  - 2026/index.md
+
+markdown: kramdown
+highlighter: rouge
+
+collections:
+  year2026:
+    output: true
+    permalink: /2026/:name/
+
+sass:
+  quiet_deps: true
+  style: compressed
+
+defaults:
+  - scope:
+      path: ""
+      type: "year2026"
+    values:
+      layout: "page"
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - JEKYLL.md

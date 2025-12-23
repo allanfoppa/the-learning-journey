@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
+
+{% assign months = "january,february,march,april,may,june,july,august,september,october,november,december" | split: "," %}
+{% assign current_month = page.permalink | remove: "/2026/" | remove: "/" %}
+{% assign current_index = nil %}
+
+{% for month in months %}
+  {% if month == current_month %}
+    {% assign current_index = forloop.index0 %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if current_index %}
+  <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #e0e0e0;">
+
+  <nav class="month-navigation" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
+    <div class="nav-previous">
+      {% if current_index > 0 %}
+        {% assign prev_index = current_index | minus: 1 %}
+        {% assign prev_month = months[prev_index] %}
+        <a href="{{ '/2026/' | append: prev_month | append: '/' | relative_url }}" style="text-decoration: none;">
+          ← <strong>{{ prev_month | capitalize }}</strong>
+        </a>
+      {% else %}
+        <a href="{{ '/' | relative_url }}" style="text-decoration: none;">
+          ← <strong>Home</strong>
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="nav-next">
+      {% if current_index < 11 %}
+        {% assign next_index = current_index | plus: 1 %}
+        {% assign next_month = months[next_index] %}
+        <a href="{{ '/2026/' | append: next_month | append: '/' | relative_url }}" style="text-decoration: none;">
+          <strong>{{ next_month | capitalize }}</strong> →
+        </a>
+      {% else %}
+        <span style="color: #999;">End of 2026</span>
+      {% endif %}
+    </div>
+  </nav>
+{% endif %}
